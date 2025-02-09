@@ -3,6 +3,7 @@ package org.coachbeardjr.learn.spring.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,4 +17,6 @@ public class Author {
   private Long id;
   private String name;
   private String biography;
+  @ManyToOne
+  private Publisher publisher;
 }
