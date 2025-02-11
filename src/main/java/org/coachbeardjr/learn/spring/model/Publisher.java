@@ -1,19 +1,20 @@
 package org.coachbeardjr.learn.spring.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
+
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name="publishers")
 @Getter
 @Setter
-public class Publisher {
-  @Id @GeneratedValue
-  private Long id;
-  private String name;
+@Table("publishers")
+public class Publisher{
+  @Id 
+  private Long id; 
+  private String name; 
   private String address;
 }
+
