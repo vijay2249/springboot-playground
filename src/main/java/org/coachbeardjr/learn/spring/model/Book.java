@@ -22,4 +22,5 @@ public class Book{
   private String isbn;
   @ManyToMany
   private List<Author> authors;
+  private Boolean published;
 }

@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: emp1
+      changes:
+        - addColumn:
+            tableName: books
+            columns:
+              - column:
+                  name: published
+                  type: boolean
+                  defaultValue: false
