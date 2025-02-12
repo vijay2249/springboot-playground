@@ -39,6 +39,7 @@ public class BookController {
   }
 
   @DeleteMapping("/{id}")
+  @CacheEvict(value="books", key="#id")
   public ResponseEntity<Void> deleteBook(@PathVariable Long id){
     if(bookRepository.existsById(id) != null){
       bookRepository.deleteById(id);
@@ -48,6 +49,7 @@ public class BookController {
   }
 
   @PutMapping("/{id}")
+  @CacheEvict(value="books", allEntries=true)
   public ResponseEntity<Mono<Book>> updateBook(@PathVariable Long id, @RequestBody Book newBookData){
     Mono<Book> updatedBook = bookRepository.findById(id)
       .doOnNext(existingBook ->{
