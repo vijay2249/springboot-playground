@@ -1,6 +1,6 @@
 version: '3.1'
 services:
-  db:
+  postgres:
     image: postgres
     restart: always
     environment:
@@ -8,3 +8,10 @@ services:
       POSTGRES_DB: bookstore
     ports:
     - "5432:5432"
+  mongoDB:
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: bookstore
